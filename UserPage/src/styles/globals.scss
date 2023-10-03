@@ -8,12 +8,16 @@
   --transition: all 0.15s ease-in-out;
   --font-family: 'Nunito', sans-serif;
 
-  --blue: #2196f3;
+  --blue: #028ACC;
+
+  --green: #0bca51;
+  --green-dark: #0a9e42;
 
   --grey: #9e9e9e;
   --grey-dark: #424242;
   --grey-light: #e0e0e0;
   --black: #212121;
+  --back: #252e39;
 
   --white: #ffffff;
 }
@@ -23,17 +27,41 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: var(--back);
   font-family: var(--font-family);
   transition: 0.5s;
 }
 
 .container {
-  height: 75vh;
-  margin: 0 auto;
-  padding: 0 1rem;
-  margin-top: 20vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+
+  .blockTitle {
+    width: 80%;
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    user-select: none;
+    position: relative;
+
+    .title {
+      position: absolute;
+      top: -3rem;
+      left: 1rem;
+      color: var(--white);
+    }
+  }
+
+  .charts {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

@@ -1,41 +1,43 @@
 import styles from './styles.module.scss'
 
 interface ItemProps {
-    imgSrc: string
-    title: string
-    titleColor?: string
-    description?: string
-    number: number
+    data: any
+    reducer: boolean
 }
 
 const Item = ({
-    imgSrc,
-    title,
-    titleColor = '#9e9e9e',
-    description,
-    number
+    data,
+    reducer
 }: ItemProps) => {
+    if (!reducer) {
+        data = data.slice(0, 10)
+    }
+
     return (
-        <div className={styles.itemsContainer}>
-            <div className={styles.items__img}>
-                <img src={imgSrc} alt="item" />
-            </div>
-
-            <div className={styles.items__info}>
-                <div className={styles.title} style={{ color: titleColor }}>
-                    {title}
+        <>
+        {data.map((item: any, index: any) => (
+            <div className={styles.itemsContainer} key={index}>
+                <div className={styles.items__img}>
+                    <img src={item.imgSrc} alt="item" />
                 </div>
 
-                {description && <div className={styles.description}>
-                        {description}
+                <div className={styles.items__info}>
+                    <div className={styles.title} style={{ color: item.titleColor ? item.titleColor : '#9e9e9e' }}>
+                        {item.title}
                     </div>
-                }
 
-                <div className={styles.items__number}>
-                    {number}
+                    {item.description && <div className={styles.description}>
+                            {item.description}
+                        </div>
+                    }
+
+                    <div className={styles.items__number}>
+                        {item.number}
+                    </div>
                 </div>
             </div>
-        </div>
+        ))}
+        </>
     )
 }
 

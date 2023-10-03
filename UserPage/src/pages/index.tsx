@@ -1,9 +1,13 @@
 import Head from 'next/head'
-import { Header, Item, UserCard } from '../../Components'
+import { Header, Item, UserCard, Area, CheckBox } from '../../Components'
 import UserType from '@/types/userCard'
-import Area from '../../Components/Area'
+import { useEffect, useState } from 'react'
 
 const Home = () => {
+  const [reduce1, setReduce1] = useState<boolean>(false)
+  const [reduce2, setReduce2] = useState<boolean>(false)
+  const [reduce3, setReduce3] = useState<boolean>(false)
+
   const user: UserType = {
     name: 'John Doe',
     grade: "MVP",
@@ -11,7 +15,7 @@ const Home = () => {
     timePlayed: 100,
   }
 
-  const block = [{
+  var block = [{
     title: 'Anvil',
     imgSrc: '/icon/1.png',
     titleColor: '#f5b301',
@@ -62,8 +66,57 @@ const Home = () => {
     imgSrc: '/icon/10.png',
     number: 5,
   },
-]
-
+  {
+    title: 'Anvil',
+    imgSrc: '/icon/11.png',
+    number: 1245,
+  },
+  {
+    title: 'Beacon',
+    imgSrc: '/icon/12.png',
+    titleColor: '#17ead9',
+    number: 989,
+  },
+  {
+    title: 'Brick',
+    imgSrc: '/icon/13.png',
+    number: 590,
+  },
+  {
+    title: 'Cactus',
+    imgSrc: '/icon/14.png',
+    number: 473,
+  },
+  {
+    title: 'Carpet',
+    imgSrc: '/icon/15.png',
+    number: 309,
+  },
+  {
+    title: 'Clay',
+    imgSrc: '/icon/16.png',
+    number: 178,
+  },
+  {
+    title: 'Chest',
+    imgSrc: '/icon/17.png',
+    number: 90,
+  },
+  {
+    title: 'Cocoa',
+    imgSrc: '/icon/18.png',
+    number: 87,
+  },
+  {
+    title: 'Concrete',
+    imgSrc: '/icon/19.png',
+    number: 5,
+  },
+  {
+    title: 'Dirt',
+    imgSrc: '/icon/20.png',
+    number: 5,
+  }]
 
     var dataSample1 = Array.from({ length: 31 }, () => ({
       value: Math.floor(Math.random() * 100),
@@ -101,8 +154,6 @@ const Home = () => {
       time: `${index + 1}/10`,
     }))
 
-    console.log(dataSample1)
-
   return (
     <>
       <Head>
@@ -119,49 +170,40 @@ const Home = () => {
         <div className="blockTitle">
           <div className="title">
             <h2>Blocs cassés</h2>
+            <CheckBox title={
+                reduce1 ? "Réduire" : "Agrandir"
+            } checked={reduce1} onChange={() => setReduce1(!reduce1)} />
           </div>
-          {block.map((item, index) => (
-            <div key={index}>
-              <Item
-                imgSrc={item.imgSrc}
-                title={item.title}
-                titleColor={item.titleColor}
-                number={item.number}
-              />
-            </div>
-          ))}
+          <Item
+            data={block}
+            reducer={reduce1}
+          />
         </div>
 
         <div className="blockTitle">
           <div className="title">
             <h2>Blocs placés</h2>
+            <CheckBox title={
+                reduce2 ? "Réduire" : "Agrandir"
+            } checked={reduce2} onChange={() => setReduce2(!reduce2)} />
           </div>
-          {block.reverse().map((item, index) => (
-            <div key={index}>
-              <Item
-                imgSrc={item.imgSrc}
-                title={item.title}
-                titleColor={item.titleColor}
-                number={item.number}
-              />
-            </div>
-          ))}
+          <Item
+            data={block}
+            reducer={reduce2}
+          />
         </div>
 
         <div className="blockTitle">
           <div className="title">
             <h2>Items</h2>
+            <CheckBox title={
+                reduce3 ? "Réduire" : "Agrandir"
+            } checked={reduce3} onChange={() => setReduce3(!reduce3)} />
           </div>
-          {block.reverse().map((item, index) => (
-            <div key={index}>
-              <Item
-                imgSrc={item.imgSrc}
-                title={item.title}
-                titleColor={item.titleColor}
-                number={item.number}
-              />
-            </div>
-          ))}
+            <Item
+              data={block}
+              reducer={reduce3}
+            />
         </div>
 
         <div className="charts">

@@ -20,10 +20,10 @@ const Area = ({ colorData, data, dualData, seriesNames }: AreaProps) => {
                 }
             },
             toolbar: {
-                show: false
+                show: true
             },
             zoom: {
-                enabled: false
+                enabled: true
             }
         },
         colors: colorData,
@@ -65,7 +65,9 @@ const Area = ({ colorData, data, dualData, seriesNames }: AreaProps) => {
     return (
         <Chart
             type="area"
-            height={300}
+            height={
+                dualData ? 318: 300
+            }
             width='250%'
             options={options as any}
             {...(dualData ? {

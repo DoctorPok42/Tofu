@@ -36,7 +36,7 @@ const UserCard = ({ user }: UserCardProps) => {
             </div>
 
             <div className={styles.timePlayed}>
-                <h2>Temp de jeu : {user.timePlayed}h</h2>
+                <h2>Temp de jeu total : {user.timePlayed}h</h2>
             </div>
 
             <div className={styles.btns}>

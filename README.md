@@ -49,6 +49,10 @@ Voici la liste ci-dessous du moins chère au plus chère :
 
 Les stats du joueur et la boutique apparaîtrons après connexion au BA connect.
 
+
+Nous avons procédé à l'ajout d'un tableau de leaderboard pour permettre de rajouter du défi entre les utilisateurs, il fonctionne en plusieurs classement tel que le nombres de kills, de morts ou d'heures de jeu en affichant les trois premiers de chaque leaderboard. Et renvoie également sur le coté la place dans le leaderboard de l'utilisateur qui regarde en lui indiquant son classement et les stats qu'il a actuellement.
+
+
 ## Technologies utilisées
 
 Concernant le Ba Connect nous avons utilisé les technologies suivantes :

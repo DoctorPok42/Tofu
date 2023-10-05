@@ -1,0 +1,72 @@
+.userBarContainer {
+    width: 85rem;
+    margin-top: 3rem;
+    margin-left: 15rem;
+    margin-bottom: 5rem;
+
+    .userBar {
+        width: 60%;
+        height: 4rem;
+        border-radius: 10px;
+        background-color: rgba(224, 224, 224, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 1rem 0;
+        transition: var(--transition);
+        cursor: pointer;
+
+        .userBar__position {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 600;
+            margin: 0 1.5rem;
+        }
+
+        .userBar__img {
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 5px;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .userBar__name {
+            width: 20rem;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-left: 1rem;
+            font-weight: 600;
+
+        }
+
+        .userBar__stat {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+    }
+
+    .userBar:hover {
+        background-color: rgba(224, 224, 224, 0.5);
+        transform: scale(1.02);
+    }
+}

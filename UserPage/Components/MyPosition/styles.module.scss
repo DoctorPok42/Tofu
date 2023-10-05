@@ -1,0 +1,96 @@
+.myPositionContainer {
+    position: absolute;
+    top: 19.72rem;
+    left: 125vh;
+    width: 30rem;
+    height: 20rem;
+    background: rgba(224, 224, 224, 0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .myPosition__img {
+        width: 30%;
+        margin-top: 1rem;
+        margin-left: 1rem;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .myPosition__name {
+        width: 55%;
+        margin-top: 2.5rem;
+        margin-left: 2rem;
+        font-size: 2rem;
+        color: var(--white);
+        font-weight: 600;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .myPosition__stat {
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: var(--white);
+        margin-left: 12.1rem;
+        margin-top: -6rem;
+
+        .userBar__position {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 600;
+            margin: 0 1.5rem;
+        }
+    }
+
+    .myPosition__multistats {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: -1rem;
+
+        .myPosition__oneStats {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: var(--white);
+            margin-left: 2rem;
+            margin-top: .8rem;
+
+            h2 {
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 1;
+            }
+
+            .myPosition__oneStats__value {
+                margin-left: 1rem;
+                font-size: 1.2rem;
+                font-weight: 1;
+                font-weight: 600;
+                color: var(--grey-dark);
+                font-style: italic;
+            }
+        }
+    }
+}
